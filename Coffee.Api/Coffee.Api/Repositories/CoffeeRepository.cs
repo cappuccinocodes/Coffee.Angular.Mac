@@ -10,6 +10,7 @@ namespace Coffee.Api.Repositories
     {
         List<CoffeeRecord> Get();
         CoffeeRecord GetById(int id);
+        void Add(CoffeeRecord record);
     }
 
     public class CoffeeRepository: ICoffeeRepository
@@ -46,6 +47,17 @@ namespace Coffee.Api.Repositories
                 return record;
             }
         }
+
+        public void Add(CoffeeRecord record)
+        {
+            using (IDbConnection connection = new SqliteConnection(_configuration.GetConnectionString("ConnectionString")))
+            {
+                var sql = "INSERT INTO Records (Type, Bean, Location, DateCreated, Score, NoOfShots, Price ) Values(@Type, @Bean, @Location, @DateCreated, @Score, @NoOfShots, @Price)";
+                connection.Execute(sql, record);
+            }
+        }
+
+
     }
 }
 

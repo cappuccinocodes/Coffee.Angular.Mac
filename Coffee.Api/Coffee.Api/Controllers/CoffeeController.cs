@@ -29,7 +29,21 @@ public class CoffeeController : ControllerBase
         var record = _coffeeRepository.GetById(id);
 
         return record;
+    }
 
+    [HttpPost]
+    public IActionResult InsertCategory(CoffeeRecord record)
+    {
+        try
+        {
+            _coffeeRepository.Add(record);
+        }
+        catch
+        {
+            return Ok(new { Success = false });
+        }
+
+        return Ok(new { Success = true });
     }
 }
 
