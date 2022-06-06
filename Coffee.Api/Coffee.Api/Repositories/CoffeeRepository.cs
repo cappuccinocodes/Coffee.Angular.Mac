@@ -11,6 +11,7 @@ namespace Coffee.Api.Repositories
         List<CoffeeRecord> Get();
         CoffeeRecord GetById(int id);
         void Add(CoffeeRecord record);
+        void Delete(int id);
     }
 
     public class CoffeeRepository: ICoffeeRepository
@@ -57,7 +58,14 @@ namespace Coffee.Api.Repositories
             }
         }
 
-
+        public void Delete(int id)
+        {
+            using (IDbConnection connection = new SqliteConnection(_configuration.GetConnectionString("ConnectionString")))
+            {
+                var sql = "DELETE FROM Records WHERE Id = @id";
+                connection.Execute(sql, new { id });
+            }
+        }
     }
 }
 

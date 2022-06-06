@@ -45,5 +45,20 @@ public class CoffeeController : ControllerBase
 
         return Ok(new { Success = true });
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteRecord(int id)
+    {
+        try
+        {
+            _coffeeRepository.Delete(id);
+        }
+        catch
+        {
+            return Ok(new { Success = false }); ;
+        }
+
+        return Ok(new { Success = true });
+    }
 }
 
