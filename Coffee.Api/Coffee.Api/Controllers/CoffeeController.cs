@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Coffee.Api.Models;
+using Coffee.Api.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Coffee.Api.Controllers;
 
@@ -6,10 +8,20 @@ namespace Coffee.Api.Controllers;
 [Route("[controller]")]
 public class CoffeeController : ControllerBase
 {
-   
-    public CoffeeController()
+    private readonly ICoffeeRepository _coffeeRepository;
+
+    public CoffeeController(ICoffeeRepository coffeeRepository)
     {
-        
+        _coffeeRepository = coffeeRepository;
+    }
+
+    [HttpGet]
+    public List<CoffeeRecord> Get()
+    {
+        var records = _coffeeRepository.Get().OrderByDescending(x => x.DateCreated).ToList();
+
+        return records;
+
     }
 }
 
