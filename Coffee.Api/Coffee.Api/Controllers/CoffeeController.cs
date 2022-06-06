@@ -21,6 +21,14 @@ public class CoffeeController : ControllerBase
         var records = _coffeeRepository.Get().OrderByDescending(x => x.DateCreated).ToList();
 
         return records;
+    }
+
+    [HttpGet("{id}")]
+    public CoffeeRecord GetById(int id)
+    {
+        var record = _coffeeRepository.GetById(id);
+
+        return record;
 
     }
 }
