@@ -6,6 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddScoped<ICoffeeRepository, CoffeeRepository>();
+builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy",
+            policy =>
+            {
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
+            }));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -21,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 
