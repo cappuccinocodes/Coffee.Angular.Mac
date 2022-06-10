@@ -22,10 +22,10 @@
       <td class="vertical-middle record-shots table-cell">{{ record.noOfShots }}</td>
       <td class="vertical-middle record-score table-cell">{{ record.score }}</td>
       <td class="vertical-middle table-cell ">
-        <button class="btn btn-danger form-button">
+        <button class="btn btn-danger form-button" (click)="onDelete(record.id)">
           <i class="bi bi-trash"></i>
         </button>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="onUpdate(record.id)">
           <i class="bi bi-pen"></i>
         </button>
       </td>

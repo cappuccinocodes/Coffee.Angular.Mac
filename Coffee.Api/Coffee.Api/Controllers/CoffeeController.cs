@@ -32,7 +32,7 @@ public class CoffeeController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult InsertCategory(CoffeeRecord record)
+    public IActionResult InsertRecord(CoffeeRecord record)
     {
         try
         {
@@ -52,6 +52,21 @@ public class CoffeeController : ControllerBase
         try
         {
             _coffeeRepository.Delete(id);
+        }
+        catch
+        {
+            return Ok(new { Success = false }); ;
+        }
+
+        return Ok(new { Success = true });
+    }
+
+    [HttpPut]
+    public IActionResult UpdateRecord(CoffeeRecord record)
+    {
+        try
+        {
+            _coffeeRepository.Update(record);
         }
         catch
         {
