@@ -63,7 +63,7 @@ namespace Coffee.Api.Repositories
         {
             using (IDbConnection connection = new SqliteConnection(_configuration.GetConnectionString("ConnectionString")))
             {
-                var sql = "DELETE FROM Records WHERE Id = @id";
+                var sql = "DELETE FROM Recordss WHERE Id = @id";
                 connection.Execute(sql, new { id });
             }
         }
