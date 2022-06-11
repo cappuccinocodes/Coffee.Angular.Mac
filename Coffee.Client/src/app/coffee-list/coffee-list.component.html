@@ -22,7 +22,7 @@
       <td class="vertical-middle record-shots table-cell">{{ record.noOfShots }}</td>
       <td class="vertical-middle record-score table-cell">{{ record.score }}</td>
       <td class="vertical-middle table-cell ">
-        <button class="btn btn-danger form-button" (click)="onDelete(record.id)">
+        <button class="btn btn-danger form-button" (click)="openConfirmationPopup(record.id)">
           <i class="bi bi-trash"></i>
         </button>
         <button class="btn btn-primary" (click)="onUpdate(record.id)">
@@ -32,3 +32,48 @@
     </tr>
   </tbody>
 </table>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayConfirmationPopup}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-bg">
+      <div class="modal-body">
+        <div class="row justify-content-center main-wrapper">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo-wrapper">
+            <div class="logo-delete-modal">
+              
+            </div>
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 modal-message">
+            <h4 class="modal-title result-message">Are you sure?</h4>
+            <button type="button" class="btn btn-primary button-delete" (click)="onDelete()">
+              Delete
+            </button>
+            <button type="button" class="btn btn-primary button-cancel" (click)="closeConfirmationPopup()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayResultPopup}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-bg">
+      <div class="modal-body">
+        <div class="row justify-content-center main-wrapper">
+          <div class="logo-delete-result-modal">
+
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 modal-message">
+            <h4 class="result-message">{{resultPopupMessage}}</h4>
+            <button type="button" class="btn btn-danger button-cancel" (click)="closeResultPopup()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

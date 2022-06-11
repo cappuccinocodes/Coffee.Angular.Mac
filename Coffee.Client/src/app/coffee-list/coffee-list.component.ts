@@ -44,6 +44,7 @@ export class CoffeeListComponent implements OnInit {
   }
 
   openConfirmationPopup(id: number) {
+    console.log('hello ' + id);
     this.deleteId = id;
     this.displayConfirmationPopup = 'block';
   }
