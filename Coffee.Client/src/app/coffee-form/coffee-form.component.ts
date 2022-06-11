@@ -29,6 +29,8 @@ export class CoffeeFormComponent implements OnInit {
     success: false
   }
 
+  hasApiResponded = false;
+
   constructor(
     private fb: FormBuilder,
     private coffeeService: CoffeeService) {
@@ -85,6 +87,7 @@ export class CoffeeFormComponent implements OnInit {
           this.operation = "updated";
           this.openPopup(this.response.success);
           this.emptyForm();
+          this.hasApiResponded = true;
        });
       } else {
         this.coffeeService.addRecord(this.addRecordForm.value).subscribe((data) => {
@@ -93,8 +96,11 @@ export class CoffeeFormComponent implements OnInit {
           this.operation = "added";
           this.openPopup(this.response.success);
           this.emptyForm();
-
+          this.hasApiResponded = true;
        })
+        if (!this.hasApiResponded) {
+        this.openPopup(false);
+      }
   }
     } else {
       return;
