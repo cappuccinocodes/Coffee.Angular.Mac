@@ -5,12 +5,12 @@
 </div>
   <div class="form-floating coffee-form-input">
     <input type="text" id="type" name="type" formControlName="type" class="form-control">
-    <label for="type" class="form-label">Name </label>
+    <label for="type" class="form-label">Name* </label>
     <p *ngIf="registerFormControl['type'].touched && registerFormControl['type'].errors">Name can't be empty</p>
   </div>
   <div class="form-floating">
     <input type="datetime-local" id="dateCreated" name="dateCreated" formControlName="dateCreated" class="form-control">
-    <label for="dateCreated" class="form-label">Date </label>
+    <label for="dateCreated" class="form-label">Date* </label>
     <p *ngIf="registerFormControl['dateCreated'].touched && registerFormControl['dateCreated'].errors">Date can't be
       empty</p>
   </div>
@@ -20,7 +20,7 @@
   </div>
   <div class="form-floating">
     <input type="text" id="location" name="location" formControlName="location" class="form-control">
-    <label for="location" class="form-label">Location </label>
+    <label for="location" class="form-label">Location* </label>
     <p *ngIf="registerFormControl['location'].touched && registerFormControl['location'].errors">Location can't be empty
     </p>
   </div>
@@ -36,7 +36,7 @@
   </div>
   <div class="form-floating">
     <input type="number" id="noOfShots" name="noOfShots" formControlName="noOfShots" class="form-control">
-    <label for="price" class="form-label">Shots </label>
+    <label for="price" class="form-label">Shots* </label>
     <div *ngIf="registerFormControl['noOfShots'].touched && registerFormControl['noOfShots'].errors">
       <p *ngIf="registerFormControl['noOfShots'].touched && registerFormControl['noOfShots'].errors['required']">Shots
         can't be empty</p>
@@ -45,8 +45,9 @@
     </div>
   </div>
   <p>
-    <button type="submit" class="btn btn-success add-record-button">{{ submitButton }}</button>
+    <button type="submit" [disabled]="!addRecordForm.valid" class="btn btn-success add-record-button">{{ submitButton }}</button>
   </p>
+  <p class="required-message">* = Required Fields</p>
 </form>
 
 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayPopup}">

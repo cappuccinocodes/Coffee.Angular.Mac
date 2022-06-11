@@ -77,6 +77,11 @@ input:focus {
   margin-bottom: 90px;
   overflow: hidden;
 }
+
+.required-message {
+  color: white;
+}
+
 @media only screen and (max-width: 576px) {
   .coffee-form-title {
     text-align: center;

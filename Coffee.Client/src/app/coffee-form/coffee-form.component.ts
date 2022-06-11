@@ -77,24 +77,29 @@ export class CoffeeFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.addRecordForm.value.id > 0) {
-      this.coffeeService.updateRecord(this.addRecordForm.value).subscribe((data) => {
-        this.coffeeService.updateList();
-        this.response = data as ApiResponse;
-        this.operation = "updated";
-        this.openPopup(this.response.success);
-        this.emptyForm();
-     });
-    } else {
-      this.coffeeService.addRecord(this.addRecordForm.value).subscribe((data) => {
-        this.coffeeService.updateList();
-        this.response = data as ApiResponse;
-        this.operation = "added";
-        this.openPopup(this.response.success);
-        this.emptyForm();
+    if (this.addRecordForm.valid) {
+      if (this.addRecordForm.value.id > 0) {
+        this.coffeeService.updateRecord(this.addRecordForm.value).subscribe((data) => {
+          this.coffeeService.updateList();
+          this.response = data as ApiResponse;
+          this.operation = "updated";
+          this.openPopup(this.response.success);
+          this.emptyForm();
+       });
+      } else {
+        this.coffeeService.addRecord(this.addRecordForm.value).subscribe((data) => {
+          this.coffeeService.updateList();
+          this.response = data as ApiResponse;
+          this.operation = "added";
+          this.openPopup(this.response.success);
+          this.emptyForm();
 
-     })
-}
+       })
+  }
+    } else {
+      return;
+    }
+
   }
 
   openPopup(result: boolean) {
