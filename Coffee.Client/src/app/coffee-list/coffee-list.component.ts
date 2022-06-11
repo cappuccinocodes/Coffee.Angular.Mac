@@ -20,6 +20,9 @@ export class CoffeeListComponent implements OnInit {
   displayResultPopup = 'none';
   resultPopupMessage = "";
 
+  deleteConfirmationImage = "assets/delete-modal.png"
+  deleteResultImage = ""
+
   response: ApiResponse = {
     success: false
   }
@@ -62,11 +65,12 @@ export class CoffeeListComponent implements OnInit {
     this.displayResultPopup = 'block';
     if (result != null && result) {
       this.resultPopupMessage = "Record deleted successfully";
+      this.deleteResultImage = "assets/logo.png"
     } else {
       this.resultPopupMessage = "There was an error";
+      this.deleteResultImage = "assets/error.png"
     }
   }
-
   closeConfirmationPopup() {
     this.displayConfirmationPopup = 'none';
   }

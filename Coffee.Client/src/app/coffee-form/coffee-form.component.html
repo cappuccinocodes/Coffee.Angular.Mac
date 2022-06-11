@@ -1,5 +1,8 @@
 <form [formGroup]="addRecordForm" (ngSubmit)="onSubmit()" novalidate>
-
+  <div class="form-floating coffee-form-title">
+    <div class="logo"><img src="assets/logo1.png" width="50" height="50"></div>
+    <div class="logo">My Coffee Journal</div>
+</div>
   <div class="form-floating coffee-form-input">
     <input type="text" id="type" name="type" formControlName="type" class="form-control">
     <label for="type" class="form-label">Name </label>
@@ -51,8 +54,10 @@
     <div class="modal-content modal-bg">
       <div class="modal-body">
         <div class="row justify-content-center main-wrapper">
-          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo-wrapper">
+            <div class="logo-insert-result-modal">
+              <img src={{insertResultImage}} width="{{modalLogoWidth}}" height="{{modalLogoHeight}}">
+            </div>
           </div>
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 modal-message">
             <h4 class="delete-result-modal">{{resultPopupMessage}}</h4>

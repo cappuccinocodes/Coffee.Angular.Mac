@@ -21,6 +21,10 @@ export class CoffeeFormComponent implements OnInit {
   resultPopupMessage = "";
   operation = "";
 
+  insertResultImage = '';
+  modalLogoWidth = 120;
+  modalLogoHeight = 120;
+
   response: ApiResponse = {
     success: false
   }
@@ -98,8 +102,11 @@ export class CoffeeFormComponent implements OnInit {
 
     if (result != null && result) {
       this.resultPopupMessage = `Record ${this.operation} successfully`;
+      this.insertResultImage = 'assets/added-record.png';
     } else {
-      this.resultPopupMessage = "There was an error";
+      this.resultPopupMessage = 'There was an error';
+      this.insertResultImage = 'assets/error.png';
+      this.modalLogoWidth = 140;
     }
   }
 
