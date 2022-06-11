@@ -1,0 +1,171 @@
+.record-cell {
+  display: block;
+}
+
+.record-type {
+  margin-bottom: -3px;
+  font-weight: 700;
+}
+
+.record-bean {
+  font-size: 13px;
+  color: #244110;
+  font-weight: 600;
+}
+
+.record-date {
+  font-size: 13px;
+  margin-bottom: -5px;
+  font-weight: 600;
+  color: #67310f;
+}
+
+.record-price,
+.record-type,
+.record-location,
+.record-shots,
+.record-score {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.form-button {
+  margin-right: 2px;
+}
+
+.table-cell {
+  background-color: rgba(193, 159, 150, 0.9);
+  border: none;
+  color: black;
+}
+
+.table-head {
+  background-color: rgba(78, 60, 67, 0.9);
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #2c190e ;
+  border: none;
+  width: 50px;
+  height: 45px;
+}
+
+.btn-primary {
+  background-color: #a45424;
+  border: none;
+  width: 50px;
+  height: 45px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.modal-bg {
+  background-color: #a45424;
+}
+
+.result-message {
+  color: white;
+}
+
+.button-delete {
+  width: 100px;
+  margin-right: 5px;
+  background-color: white;
+  color: #2c190e;
+}
+
+.button-cancel {
+  width: 100px;
+  background-color: white;
+  color: #2c190e;
+}
+
+.modal-message {
+  text-align: center;
+}
+
+.modal-body {
+  vertical-align: middle !important;
+  height: 120px;
+}
+
+.logo-delete-modal, .logo-delete-result-modal {
+  padding-right: 10px;
+  height: 50%;
+  width: 120px;
+  margin-bottom: 0 px;
+  overflow: hidden;
+  height: 105px;
+}
+
+@media only screen and (max-width: 576px) {
+  .logo-wrapper {
+    width: 150px;
+  }
+
+  .delete-message{
+    font-size: 18px;
+    padding-left: 30px;
+  }
+
+  .button-delete, .button-cancel {
+    width: 80px;
+  }
+
+  .record-score {
+    display: none;
+  }
+
+  .record-shots {
+    display: none;
+  }
+
+  .record-type {
+    font-size: 16px !important;
+  }
+
+  .record-price {
+    font-size: 14px !important;
+    width: 100px !important;
+  }
+
+  .record-location {
+    font-size: 14px !important;
+  }
+
+  .record-date {
+    font-size: 12px !important;
+  }
+
+  th {
+    font-size: 14px !important;
+  }
+
+  td:nth-child(2),
+  th:nth-child(2) {
+    width: 15%;
+  }
+
+  td:nth-child(3),
+  th:nth-child(3) {
+    width: 20%;
+  }
+
+  button {
+    margin-right: -20px;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+}
+
+

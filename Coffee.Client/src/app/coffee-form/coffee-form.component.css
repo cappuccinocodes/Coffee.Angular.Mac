@@ -1,0 +1,90 @@
+
+.logo {
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  height:100%;
+  width:auto;
+}
+
+.logo {
+  display:inline-block;
+  padding-right: 5px;
+  font-size: 22px;
+}
+
+.form-floating {
+  padding-bottom: 5px !important;
+}
+
+.add-record-button {
+  width: 100%;
+}
+
+input,
+input:focus {
+  background-color: #c19f96;
+  font-weight: 700;
+  border: none;
+  background-color: rgba(193, 159, 150, 0.9)
+}
+
+.form-floating label {
+  color: black;
+}
+
+.btn-success {
+  background-color: #a45424;
+  border: none;
+}
+
+.form-floating p {
+  color: white;
+}
+
+.modal-bg {
+  background-color: #a45424;
+}
+
+.result-message {
+  color: white;
+}
+
+.button-delete {
+  width: 100px;
+  margin-right: 5px;
+  background-color: #2c190e;
+}
+
+.button-cancel {
+  width: 100px;
+  background-color: white;
+  color: #2c190e;
+}
+
+.modal-message {
+  text-align: center;
+}
+
+.modal-body {
+  vertical-align: middle !important;
+  height: 120px;
+}
+
+.logo-insert-result-modal {
+  height: 50%;
+  width: 140px;
+  margin-bottom: 90px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 576px) {
+  .coffee-form-title {
+    text-align: center;
+  }
+
+  .logo-wrapper {
+    width: 150px;
+  }
+}
+
+
